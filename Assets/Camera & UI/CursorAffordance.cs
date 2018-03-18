@@ -19,10 +19,10 @@ public class CursorAffordance : MonoBehaviour
         cameraRaycaster.layerChangeObservers += OnLayerChange; // registering
 	}
 	
-	void OnLayerChange ()
+	void OnLayerChange (Layer newLayer)
     {
         print("Cursor over new layer");
-        switch (cameraRaycaster.currentLayerHit)
+        switch (newLayer)
         {
             case Layer.Walkable:
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
@@ -36,7 +36,8 @@ public class CursorAffordance : MonoBehaviour
             default:
                 Debug.LogError("Don't know what cursor to show");
                 return;
-        }
-        
+        }        
 	}
+
+    // TODO consider deregistering OnLayerChanged on leaving all game scenes
 }
