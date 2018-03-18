@@ -18,16 +18,18 @@ public class PlayerMovement : MonoBehaviour
         currentClickTarget = transform.position;
     }
 
+    // TODO fix conflict with WASD movement speed
+
     // Fixed update is called in sync with physics
     private void FixedUpdate()
-    {        
+    {
         if (Input.GetMouseButton(0))
         {
             print("Cursor raycast hit" + cameraRaycaster.layerHit);
             switch (cameraRaycaster.layerHit)
             {
                 case Layer.Walkable:
-                    currentClickTarget = cameraRaycaster.hit.point;                      
+                    currentClickTarget = cameraRaycaster.hit.point;
                     break;
                 case Layer.Enemy:
                     print("Not moving to enemy");
@@ -41,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
         var playerToClickPoint = currentClickTarget - transform.position;
         if (playerToClickPoint.magnitude >= walkMoveStopRadius)
         {
-            m_Character.Move(playerToClickPoint, false, false); // put inside switch for move on mouse held
+             m_Character.Move(playerToClickPoint, false, false); // put inside switch for move on mouse held
         }
         else
         {
-            m_Character.Move(Vector3.zero, false, false);
+           m_Character.Move(Vector3.zero, false, false);
         }
     }
 }
