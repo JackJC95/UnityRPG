@@ -21,25 +21,6 @@ public class PlayerMovement : MonoBehaviour
         currentDestination = transform.position;
     }
 
-    // Fixed update is called in sync with physics
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.G)) // TODO allow player to remap later or add to menus. G for gamepad.
-        {
-            isInDirectMode = !isInDirectMode; // toggle
-            currentDestination = transform.position; // clear click target
-        }
-
-        if (isInDirectMode)
-        {
-            ProcessDirectMovement();
-        }
-        else
-        {            
-            ProcessMouseMovement();
-        }
-    }
-
     private void ProcessDirectMovement()
     {
         float h = Input.GetAxis("Horizontal");
@@ -52,27 +33,27 @@ public class PlayerMovement : MonoBehaviour
         thirdPersonCharacter.Move(movement, false, false);
     }
 
-    private void ProcessMouseMovement()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            clickPoint = cameraRaycaster.hit.point;
-            switch (cameraRaycaster.currentLayerHit)
-            {
-                case Layer.Walkable:
-                    currentDestination = ShortDestination(clickPoint, walkMoveStopRadius);
-                    break;
-                case Layer.Enemy:
-                    currentDestination = ShortDestination(clickPoint, attackMoveStopRadius);
-                    break;
-                default:
-                    print("Unexpected layer found");
-                    return;
-            }
-        }
+    //private void ProcessMouseMovement()
+    //{
+    //    if (Input.GetMouseButton(0))
+    //    {
+    //        clickPoint = cameraRaycaster.hit.point;
+    //        switch (cameraRaycaster.currentLayerHit)
+    //        {
+    //            case Layer.Walkable:
+    //                currentDestination = ShortDestination(clickPoint, walkMoveStopRadius);
+    //                break;
+    //            case Layer.Enemy:
+    //                currentDestination = ShortDestination(clickPoint, attackMoveStopRadius);
+    //                break;
+    //            default:
+    //                print("Unexpected layer found");
+    //                return;
+    //        }
+    //    }
 
-        WalkToDestination();
-    }
+    //    WalkToDestination();
+    //}
 
     private void WalkToDestination()
     {
