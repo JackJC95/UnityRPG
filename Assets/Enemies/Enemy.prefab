@@ -1373,8 +1373,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
-  m_LocalRotation: {x: -0, y: 0.64486897, z: -0, w: 0.7642931}
-  m_LocalPosition: {x: 0.30474624, y: 0.97, z: -17.528126}
+  m_LocalRotation: {x: -0, y: 0.8545842, z: -0, w: 0.5193129}
+  m_LocalPosition: {x: -52.22, y: 0.98, z: 66.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469942}
@@ -2756,6 +2756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 100
   attackRadius: 8
+  chaseRadius: 6
 --- !u!114 &114966272022385284
 MonoBehaviour:
   m_ObjectHideFlags: 1
