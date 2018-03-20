@@ -7115,7 +7115,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 408730, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -57.19
+      value: -53.38
       objectReference: {fileID: 0}
     - target: {fileID: 408730, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7123,7 +7123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408730, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 71.32
+      value: 64.87
       objectReference: {fileID: 0}
     - target: {fileID: 408730, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7148,14 +7148,6 @@ Prefab:
     - target: {fileID: 149790, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
       propertyPath: m_Name
       value: Enemy (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 408730, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 408730, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42b76c5d288cd094ab3625db2e076deb, type: 2}
