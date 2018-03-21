@@ -2582,7 +2582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9cdd970cc4e1a4fbbd22aeeb4d47f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 100
+  maxHealthPoints: 250
   attackRadius: 2
   chaseRadius: 5
   damagePerShot: 40
