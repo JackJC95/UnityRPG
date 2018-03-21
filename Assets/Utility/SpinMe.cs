@@ -11,13 +11,13 @@ public class SpinMe : MonoBehaviour
 	
 	void Update ()
     {
-        float xDegreesPerFrame = (Time.deltaTime / 60) * xRotationsPerMinute * 360; // TODO COMPLETE ME
+        float xDegreesPerFrame = (Time.deltaTime / 60) * xRotationsPerMinute * 360;
         transform.RotateAround (transform.position, transform.right, xDegreesPerFrame);
 
-		float yDegreesPerFrame = (Time.deltaTime / 60) * yRotationsPerMinute * 360; // TODO COMPLETE ME
+		float yDegreesPerFrame = (Time.deltaTime / 60) * yRotationsPerMinute * 360; 
         transform.RotateAround (transform.position, transform.up, yDegreesPerFrame);
 
-        float zDegreesPerFrame = (Time.deltaTime / 60) * zRotationsPerMinute * 360; // TODO COMPLETE ME
+        float zDegreesPerFrame = (Time.deltaTime / 60) * zRotationsPerMinute * 360; 
         transform.RotateAround (transform.position, transform.forward, zDegreesPerFrame);
 	}
 }
