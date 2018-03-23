@@ -1,46 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Core; // TODO consider rewire
 
-public class Projectile : MonoBehaviour
-{    
-    [SerializeField] float projectileSpeed;
-    [SerializeField] GameObject shooter; // so can inspect when paused
-
-    const float DESTROY_DELAY = 0.01f;
-    float damageCaused;
-
-    public void SetShooter(GameObject shooter)
+namespace RPG.Weapons
+{
+    public class Projectile : MonoBehaviour
     {
-        this.shooter = shooter;
-    }
+        [SerializeField] float projectileSpeed;
+        [SerializeField] GameObject shooter; // so can inspect when paused
 
-    public void SetDamage(float damage)
-    {
-        damageCaused = damage;
-    }
+        const float DESTROY_DELAY = 0.01f;
+        float damageCaused;
 
-    public float GetDefaultLaunchSpeed()
-    {
-        return projectileSpeed;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        var layerCollidedWith = collision.gameObject.layer;
-        if (layerCollidedWith != shooter.layer)
+        public void SetShooter(GameObject shooter)
         {
-            DamageIfDamageable(collision);
+            this.shooter = shooter;
         }
-    }
 
-    private void DamageIfDamageable(Collision collision)
-    {
-        Component damageableComponent = collision.gameObject.GetComponent(typeof(IDamageable));
-        if (damageableComponent)
+        public void SetDamage(float damage)
         {
-            (damageableComponent as IDamageable).TakeDamage(damageCaused);
+            damageCaused = damage;
         }
-        Destroy(gameObject, DESTROY_DELAY);
+
+        public float GetDefaultLaunchSpeed()
+        {
+            return projectileSpeed;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            var layerCollidedWith = collision.gameObject.layer;
+            if (shooter && layerCollidedWith != shooter.layer)
+            {
+                DamageIfDamageable(collision);
+            }
+        }
+
+        private void DamageIfDamageable(Collision collision)
+        {
+            Component damageableComponent = collision.gameObject.GetComponent(typeof(IDamageable));
+            if (damageableComponent)
+            {
+                (damageableComponent as IDamageable).TakeDamage(damageCaused);
+            }
+            Destroy(gameObject, DESTROY_DELAY);
+        }
     }
 }

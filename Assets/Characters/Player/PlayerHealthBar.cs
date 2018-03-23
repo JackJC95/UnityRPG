@@ -5,22 +5,24 @@ using UnityEngine.UI;
 
 namespace RPG.Characters
 {
-    public class EnemyHealthBar : MonoBehaviour
+    [RequireComponent(typeof(RawImage))]
+    public class PlayerHealthBar : MonoBehaviour
     {
-        RawImage healthBarRawImage = null;
-        Enemy enemy = null;
+
+        RawImage healthBarRawImage;
+        Player player;
 
         // Use this for initialization
         void Start()
         {
-            enemy = GetComponentInParent<Enemy>(); // Different to way player's health bar finds player
+            player = FindObjectOfType<Player>();
             healthBarRawImage = GetComponent<RawImage>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            float xValue = -(enemy.healthAsPercentage / 2f) - 0.5f;
+            float xValue = -(player.healthAsPercentage / 2f) - 0.5f;
             healthBarRawImage.uvRect = new Rect(xValue, 0f, 0.5f, 1f);
         }
     }

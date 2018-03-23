@@ -2,40 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent (typeof(CameraRaycaster))]
-public class CursorAffordance : MonoBehaviour
+namespace RPG.CameraUI
 {
-    [SerializeField] Texture2D walkCursor = null;
-    [SerializeField] Texture2D unknownCursor = null;
-    [SerializeField] Texture2D targetCursor = null;
-    [SerializeField] Vector2 cursorHotspot = new Vector2(0, 0);
-
-    // TODO solve fight between serialized and const
-    [SerializeField] const int walkableLayerNumber = 8;
-    [SerializeField] const int enemyLayerNumber = 9;
-
-    CameraRaycaster cameraRaycaster;
-
-    void Start ()
+    [RequireComponent(typeof(CameraRaycaster))]
+    public class CursorAffordance : MonoBehaviour
     {
-        cameraRaycaster = GetComponent<CameraRaycaster>();
-        cameraRaycaster.notifyLayerChangeObservers += OnLayerChange; // registering
-	}
-	
-	void OnLayerChange (int newLayer)
-    {
-        switch (newLayer)
+        [SerializeField] Texture2D walkCursor = null;
+        [SerializeField] Texture2D unknownCursor = null;
+        [SerializeField] Texture2D targetCursor = null;
+        [SerializeField] Vector2 cursorHotspot = new Vector2(0, 0);
+
+        // TODO solve fight between serialized and const
+        [SerializeField] const int walkableLayerNumber = 8;
+        [SerializeField] const int enemyLayerNumber = 9;
+
+        CameraRaycaster cameraRaycaster;
+
+        void Start()
         {
-            case walkableLayerNumber:
-                Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
-                break;
-            case enemyLayerNumber:
-                Cursor.SetCursor(targetCursor, cursorHotspot, CursorMode.Auto);
-                break;
-            default:
-                Cursor.SetCursor(unknownCursor, cursorHotspot, CursorMode.Auto);
-                return;
-        }        
-	}
+            cameraRaycaster = GetComponent<CameraRaycaster>();
+            cameraRaycaster.notifyLayerChangeObservers += OnLayerChange; // registering
+        }
+
+        void OnLayerChange(int newLayer)
+        {
+            switch (newLayer)
+            {
+                case walkableLayerNumber:
+                    Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
+                    break;
+                case enemyLayerNumber:
+                    Cursor.SetCursor(targetCursor, cursorHotspot, CursorMode.Auto);
+                    break;
+                default:
+                    Cursor.SetCursor(unknownCursor, cursorHotspot, CursorMode.Auto);
+                    return;
+            }
+        }
+    }
 }

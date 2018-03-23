@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+namespace RPG.CameraUI
 {
-    GameObject player;
-
-    private void Start()
+    public class CameraFollow : MonoBehaviour
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+        GameObject player;
 
-    private void LateUpdate()
-    {
-        transform.position = player.transform.position;
+        private void Start()
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        private void LateUpdate()
+        {
+            transform.position = player.transform.position;
+        }
     }
 }
