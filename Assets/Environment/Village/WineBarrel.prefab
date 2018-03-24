@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33191942570628446}
   - component: {fileID: 23800221200140670}
   - component: {fileID: 136298602528930118}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: WineBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580195758096670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.006302, y: 0.000597, z: 32.92038}
+  m_LocalPosition: {x: 0.8086853, y: 0.000597, z: 13.440552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
