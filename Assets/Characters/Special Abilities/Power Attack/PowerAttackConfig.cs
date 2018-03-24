@@ -7,7 +7,7 @@ namespace RPG.Characters
     [CreateAssetMenu(menuName = ("RPG/Special Ability/Power Attack"))]
     public class PowerAttackConfig : SpecialAbility
     {
-        [Header("Special Ability General")]
+        [Header("Power Attack Specific")]
         [SerializeField] float extraDamage = 10f;
 
         public override void AttachComponentTo(GameObject gameObjectToAttachTo)

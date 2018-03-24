@@ -13,16 +13,9 @@ namespace RPG.Characters
             this.config = configToSet;
         }
 
-        // Use this for initialization
         void Start()
         {
             print("Power Attack behaviour attached to " + gameObject.name);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void Use(AbilityUseParams useParams)
