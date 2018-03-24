@@ -21,7 +21,6 @@ namespace RPG.Characters
 
         public void Use(AbilityUseParams useParams)
         {
-            print("Area effect called, damage: " + config.GetAreaDamage() + " , radius: " + config.GetRadiusOfEffect());
             // Static sphere cast for targets
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, config.GetRadiusOfEffect(), Vector3.up, config.GetRadiusOfEffect());
 
