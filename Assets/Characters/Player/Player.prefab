@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114349366277205198}
   - component: {fileID: 114112113860311050}
   - component: {fileID: 114484107431492116}
+  - component: {fileID: 114648829255492900}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -29,15 +30,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
-  m_LocalRotation: {x: -0, y: 0.7468773, z: -0, w: 0.66496193}
-  m_LocalPosition: {x: 17.98, y: 0.21, z: -16}
+  m_LocalRotation: {x: -0, y: 0.64600873, z: -0, w: 0.76333004}
+  m_LocalPosition: {x: -54.6, y: -0.1, z: 69.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4876965567536706}
   - {fileID: 4924969422421430}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 106.505005, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 80.483, z: 0}
 --- !u!54 &5426510
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -129,7 +130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4341484518379046}
-  - component: {fileID: 114646441365936212}
+  - component: {fileID: 114020446807030958}
   m_Layer: 11
   m_Name: Hand_R
   m_TagString: Untagged
@@ -701,6 +702,17 @@ Transform:
   m_Father: {fileID: 4465021634501480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114020446807030958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1020690684062528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070b5c14a3ede3d43806e39fd3213c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114112113860311050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,22 +750,24 @@ MonoBehaviour:
   enemyLayer: 9
   maxHealthPoints: 1000
   damagePerHit: 50
-  minTimeBetweenHits: 1
-  maxAttackRange: 2
-  weaponInUse: {fileID: 11400000, guid: 1ab1cbb7d5872a34eb35f7592a252acf, type: 2}
+  weaponInUse: {fileID: 11400000, guid: 0320933cb9008884aa1813f3a683c75a, type: 2}
   animatorOverrideController: {fileID: 22100000, guid: 03238c9d99dabbb42917c408e7253f10,
     type: 2}
---- !u!114 &114646441365936212
+--- !u!114 &114648829255492900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1020690684062528}
+  m_GameObject: {fileID: 149790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070b5c14a3ede3d43806e39fd3213c0a, type: 3}
+  m_Script: {fileID: 11500000, guid: f83210e122f42ea4191b766928aa483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyBar: {fileID: 114663556836676946, guid: 973466ed985f302459bb0fb5dd846ab4,
+    type: 2}
+  maxEnergyPoints: 100
+  pointsPerHit: 10
 --- !u!137 &137450358173935766
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
