@@ -6,7 +6,7 @@ using System;
 
 namespace RPG.Characters
 {
-    public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility
+    public class AreaEffectBehaviour : AbilityBehaviour
     {
         AreaEffectConfig config;
         AudioSource audioSource = null;
@@ -21,7 +21,7 @@ namespace RPG.Characters
             audioSource = GetComponent<AudioSource>();
         }
 
-        public void Use(AbilityUseParams useParams)
+        public override void Use(AbilityUseParams useParams)
         {
             DeaRadialDamage(useParams);
             PlayParticleEffect();
