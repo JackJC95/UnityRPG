@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: PA_L1
   m_EditorClassIdentifier: 
   energyCost: 10
-  particlePrefab: {fileID: 0}
+  particlePrefab: {fileID: 1153843814620880, guid: 325b08c4c8d2e3340bdd00cbbea2d795,
+    type: 2}
   extraDamage: 10
