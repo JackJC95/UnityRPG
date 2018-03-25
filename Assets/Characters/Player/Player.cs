@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 // TODO consider rewire
 using RPG.Core;
@@ -35,7 +37,26 @@ namespace RPG.Characters
 
         public void TakeDamage(float damage)
         {
+            ReduceHealth(damage);
+            bool playerDies = (currentHealthPoints - damage) <= 0;
+            if (playerDies)
+            {                
+                StartCoroutine(KillPlayer());
+            }
+        }
+
+        IEnumerator KillPlayer()
+        {
+            Debug.Log("Death sound");
+            Debug.Log("Death animation");
+            yield return new WaitForSecondsRealtime(2f); // TODO use audio clip length
+            SceneManager.LoadScene(0);
+        }
+
+        private void ReduceHealth(float damage)
+        {
             currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0, maxHealthPoints);
+            // play sound
         }
 
         private void Start()

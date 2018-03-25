@@ -99,7 +99,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Height: 1.98
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -768,6 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyBar: {fileID: 0}
   maxEnergyPoints: 100
+  regenPointsPerSecond: 5
 --- !u!137 &137450358173935766
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -844,7 +845,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 149790}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50

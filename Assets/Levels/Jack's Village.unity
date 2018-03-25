@@ -157,6 +157,11 @@ Prefab:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 905641312}
+    - target: {fileID: 114648829255492900, guid: 7737647c22c1fc64a88d5cd030c352ce,
+        type: 2}
+      propertyPath: regenPointsPerSecond
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
   m_IsPrefabParent: 0
@@ -286,18 +291,6 @@ Prefab:
     - target: {fileID: 4136751212294368, guid: d11de6f1ae30c284c9ef2e4b59be0ad1, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: d11de6f1ae30c284c9ef2e4b59be0ad1, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 229.336
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: d11de6f1ae30c284c9ef2e4b59be0ad1, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: d11de6f1ae30c284c9ef2e4b59be0ad1, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d11de6f1ae30c284c9ef2e4b59be0ad1, type: 2}
@@ -6507,18 +6500,6 @@ Prefab:
       propertyPath: m_Name
       value: Regular Soldier (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: 987f9c623a79fd049a3b8a7ea8bbc02e, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -239.449
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: 987f9c623a79fd049a3b8a7ea8bbc02e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: 987f9c623a79fd049a3b8a7ea8bbc02e, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 987f9c623a79fd049a3b8a7ea8bbc02e, type: 2}
   m_IsPrefabParent: 0
@@ -7384,14 +7365,6 @@ Prefab:
     - target: {fileID: 1879189058568062, guid: 825dc0156d4728141a580d4c7efa3696, type: 2}
       propertyPath: m_Name
       value: Thug (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: 825dc0156d4728141a580d4c7efa3696, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136751212294368, guid: 825dc0156d4728141a580d4c7efa3696, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 825dc0156d4728141a580d4c7efa3696, type: 2}
