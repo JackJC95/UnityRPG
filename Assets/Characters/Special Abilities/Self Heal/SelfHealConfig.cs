@@ -10,11 +10,9 @@ namespace RPG.Characters
         [Header("Area Effect Specific")]
         [SerializeField] float healAmount = 50f;
 
-        public override void AttachComponentTo(GameObject gameObjectToAttachTo)
+        public override AbilityBehaviour GetBehaviourComponent(GameObject objectToAttachTo)
         {
-            var behaviourComponent = gameObjectToAttachTo.AddComponent<SelfHealBehaviour>();
-            behaviourComponent.SetConfig(this);
-            behaviour = behaviourComponent;
+            return objectToAttachTo.AddComponent<SelfHealBehaviour>();
         }
 
         public float GetHealAmount()
