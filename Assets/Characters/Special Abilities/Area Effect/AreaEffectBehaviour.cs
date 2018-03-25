@@ -8,13 +8,7 @@ namespace RPG.Characters
 {
     public class AreaEffectBehaviour : AbilityBehaviour
     {
-        AreaEffectConfig config;
         AudioSource audioSource = null;
-
-        public void SetConfig(AreaEffectConfig configToSet)
-        {
-            this.config = configToSet;
-        }
 
         void Start()
         {
@@ -29,19 +23,14 @@ namespace RPG.Characters
             audioSource.Play();
         }
 
-        private void PlayParticleEffect()
-        {
-            var particlePrefab = config.GetParticlePrefab();
-            GameObject prefab = Instantiate(particlePrefab, transform.position, particlePrefab.transform.rotation);
-            ParticleSystem myParticleSystem = prefab.GetComponent<ParticleSystem>();
-            myParticleSystem.Play();
-            Destroy(prefab, myParticleSystem.main.duration);
-        }
-
         private void DeaRadialDamage(AbilityUseParams useParams)
         {
             // Static sphere cast for targets
-            RaycastHit[] hits = Physics.SphereCastAll(transform.position, config.GetRadiusOfEffect(), Vector3.up, config.GetRadiusOfEffect());
+            RaycastHit[] hits = Physics.SphereCastAll(
+                transform.position, 
+                (config as AreaEffectConfig).GetRadiusOfEffect(), 
+                Vector3.up, 
+                (config as AreaEffectConfig).GetRadiusOfEffect());
 
             foreach (RaycastHit hit in hits)
             {
@@ -49,7 +38,7 @@ namespace RPG.Characters
                 bool hitPlayer = hit.collider.gameObject.GetComponent<Player>();
                 if (damageable != null && !hitPlayer)
                 {
-                    float damageToDeal = useParams.baseDamage + config.GetAreaDamage();
+                    float damageToDeal = useParams.baseDamage + (config as AreaEffectConfig).GetAreaDamage();
                     damageable.TakeDamage(damageToDeal);
                 }
             }
