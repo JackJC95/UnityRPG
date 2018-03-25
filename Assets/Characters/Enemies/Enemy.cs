@@ -14,7 +14,8 @@ namespace RPG.Characters
         [SerializeField] float attackRadius = 8f;
         [SerializeField] float chaseRadius = 6f;
         [SerializeField] float damagePerShot = 9f;
-        [SerializeField] float secondsBetweenShots = 0.5f;
+        [SerializeField] float firingPeriodInSeconds = 0.5f;
+        [SerializeField] float firingPeriodVariation = 0.1f;
         [SerializeField] Vector3 aimOffset = new Vector3(0, 1f, 0);
 
         [SerializeField] GameObject projectileToUse;
@@ -23,11 +24,11 @@ namespace RPG.Characters
         bool isAttacking = false;
         float currentHealthPoints;
         AICharacterControl aiCharacterControl = null;
-        GameObject player = null;
+        Player player = null;
 
         private void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindObjectOfType<Player>();
             aiCharacterControl = GetComponent<AICharacterControl>();
             currentHealthPoints = maxHealthPoints;
         }
@@ -42,6 +43,11 @@ namespace RPG.Characters
 
         private void Update()
         {
+            if(player.healthAsPercentage <= Mathf.Epsilon)
+            {
+                StopAllCoroutines();
+                Destroy(this); // to stop enemy behaviour
+            }
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= chaseRadius)
             {
@@ -55,7 +61,8 @@ namespace RPG.Characters
             if (distanceToPlayer <= attackRadius && !isAttacking)
             {
                 isAttacking = true;
-                InvokeRepeating("FireProjectile", 0f, secondsBetweenShots); // TODO switch to coroutines
+                float randomisedDelay = Random.Range(firingPeriodInSeconds - firingPeriodVariation, firingPeriodInSeconds + firingPeriodVariation);
+                InvokeRepeating("FireProjectile", 0f, randomisedDelay);
             }
 
             if (distanceToPlayer > attackRadius)
