@@ -31,15 +31,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
-  m_LocalRotation: {x: -0, y: -0.56001675, z: -0, w: 0.82848126}
-  m_LocalPosition: {x: 18.17, y: -0.1, z: -15.7}
+  m_LocalRotation: {x: -0, y: -0.204676, z: -0, w: 0.9788298}
+  m_LocalPosition: {x: 36.23, y: 0.45, z: -14.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479826943402412}
   - {fileID: 4345599158568538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -68.114006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -23.621, z: 0}
 --- !u!54 &5426510
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2157,7 +2157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 200
   baseDamage: 10
-  weaponInUse: {fileID: 11400000, guid: 75fa637dbbe317c4dbe672c62d6fe4b7, type: 2}
+  weaponInUse: {fileID: 11400000, guid: 0320933cb9008884aa1813f3a683c75a, type: 2}
   animatorOverrideController: {fileID: 22100000, guid: 03238c9d99dabbb42917c408e7253f10,
     type: 2}
   damageSounds:
