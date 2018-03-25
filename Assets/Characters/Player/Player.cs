@@ -21,7 +21,7 @@ namespace RPG.Characters
         [SerializeField] AudioClip[] deathSounds;
 
         // Temporarily serialized for dubbing
-        [SerializeField] SpecialAbility[] abilities;
+        [SerializeField] AbilityConfig[] abilities;
 
         const string DEATH_TRIGGER = "Death";
         const string ATTACK_TRIGGER = "Attack";
@@ -42,14 +42,20 @@ namespace RPG.Characters
             }
         }
 
-        public void AdjustHealth(float changePoints)
+        public void TakeDamage(float damage)
         {
-            bool playerDies = (currentHealthPoints - changePoints) <= 0; // must ask before reducing health
-            ReduceHealth(changePoints);         
-            if (playerDies)
+            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0, maxHealthPoints);
+            audioSource.clip = damageSounds[UnityEngine.Random.Range(0, damageSounds.Length)];
+            audioSource.Play();
+            if (currentHealthPoints <= 0)
             {                
                 StartCoroutine(KillPlayer());
             }
+        }
+
+        public void Heal(float points)
+        {
+            currentHealthPoints = Mathf.Clamp(currentHealthPoints + points, 0, maxHealthPoints);
         }
 
         IEnumerator KillPlayer()
@@ -61,13 +67,6 @@ namespace RPG.Characters
             yield return new WaitForSecondsRealtime(audioSource.clip.length);
 
             SceneManager.LoadScene(0);
-        }
-
-        private void ReduceHealth(float damage)
-        {
-            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0, maxHealthPoints);
-            audioSource.clip = damageSounds[UnityEngine.Random.Range(0, damageSounds.Length)];
-            audioSource.Play();
         }
 
         private void Start()
@@ -174,7 +173,7 @@ namespace RPG.Characters
             if (Time.time - lastHitTime > weaponInUse.GetMinTimeBetweenHits())
             {
                 animator.SetTrigger(ATTACK_TRIGGER);
-                currentEnemy.AdjustHealth(baseDamage);
+                currentEnemy.TakeDamage(baseDamage);
                 lastHitTime = Time.time;
             }
         }
