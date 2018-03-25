@@ -122,6 +122,11 @@ namespace RPG.Characters
             animatorOverrideController["DEFAULT ATTACK"] = weaponInUse.GetAttackAnimClip(); // TODO remove constant
         }
 
+        public void PutWeaponInHand(Weapon weaponConfig)
+        {
+            print("Putting weapon in hand: " + weaponConfig);
+        }
+
         private void PutWeaponInHand()
         {
             var weaponPrefab = weaponInUse.GetWeaponPrefab();
