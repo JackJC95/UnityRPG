@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 // TODO consider rewire
 using RPG.Core;
-using RPG.Weapons;
 using RPG.CameraUI;
 using System;
 
@@ -80,7 +79,7 @@ namespace RPG.Characters
             RegisterForMouseClick();
             SetCurrentMaxHealth();
             PutWeaponInHand(currentWeaponConfig);
-            SetupRuntimeAnimator();
+            SetAttackAnimation();
             AttachInitialAbilities();          
         }
 
@@ -116,11 +115,11 @@ namespace RPG.Characters
             currentHealthPoints = maxHealthPoints;
         }
 
-        private void SetupRuntimeAnimator()
+        private void SetAttackAnimation()
         {
             animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = animatorOverrideController;
-            animatorOverrideController["DEFAULT ATTACK"] = currentWeaponConfig.GetAttackAnimClip(); // TODO remove constant
+            animatorOverrideController["DEFAULT ATTACK"] = currentWeaponConfig.GetAttackAnimClip();
         }
 
         public void PutWeaponInHand(Weapon weaponToUse)
@@ -179,6 +178,7 @@ namespace RPG.Characters
         {
             if (Time.time - lastHitTime > currentWeaponConfig.GetMinTimeBetweenHits())
             {
+                SetAttackAnimation();
                 animator.SetTrigger(ATTACK_TRIGGER);
                 currentEnemy.TakeDamage(CalculateDamage());
                 lastHitTime = Time.time;

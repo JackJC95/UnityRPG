@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Characters;
 
-namespace RPG.Weapons
+namespace RPG.Characters
 {
     [ExecuteInEditMode]
     public class WeaponPickupPoint : MonoBehaviour
