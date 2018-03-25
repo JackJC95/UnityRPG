@@ -8,22 +8,15 @@ namespace RPG.Characters
 {
     public class AreaEffectBehaviour : AbilityBehaviour
     {
-        AudioSource audioSource = null;
-
-        void Start()
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
 
         public override void Use(AbilityUseParams useParams)
         {
-            DeaRadialDamage(useParams);
+            PlayAbilitySound();
+            DealRadialDamage(useParams);
             PlayParticleEffect();
-            audioSource.clip = config.GetAudioClip();
-            audioSource.Play();
         }
 
-        private void DeaRadialDamage(AbilityUseParams useParams)
+        private void DealRadialDamage(AbilityUseParams useParams)
         {
             // Static sphere cast for targets
             RaycastHit[] hits = Physics.SphereCastAll(

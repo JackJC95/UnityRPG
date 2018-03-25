@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Characters
@@ -31,11 +30,17 @@ namespace RPG.Characters
             while (particlePrefab.GetComponent<ParticleSystem>().isPlaying)
             {                
                 yield return new WaitForSeconds(PARTICLE_CLEAN_UP_DELAY);
-                print("Waiting to destroy: " + PARTICLE_CLEAN_UP_DELAY);
             }
             
             Destroy(particlePrefab);
             yield return new WaitForEndOfFrame();
+        }
+
+        protected void PlayAbilitySound()
+        {
+            var abilitySound = config.GetRandomAbilitySound();
+            var audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(abilitySound);
         }
     }
 }
