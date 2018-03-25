@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2694a769b16b722438e525369c17e99f, type: 3}
-  m_Name: Area Effect 1
+  m_Script: {fileID: 11500000, guid: fa38688095044cb478dfbc633bd86046, type: 3}
+  m_Name: SH_L1
   m_EditorClassIdentifier: 
   energyCost: 50
-  radius: 5
-  areaDamage: 25
+  particlePrefab: {fileID: 0}
+  healAmount: 50

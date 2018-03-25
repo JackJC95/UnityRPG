@@ -30,7 +30,7 @@ namespace RPG.Characters
                 if (damageable != null)
                 {
                     float damageToDeal = useParams.baseDamage + config.GetAreaDamage();
-                    damageable.TakeDamage(damageToDeal);
+                    damageable.AdjustHealth(damageToDeal);
                 }
             }
         }
