@@ -16,7 +16,7 @@ namespace RPG.Characters
         void Start()
         {
             CameraRaycaster cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
-            character = GetComponent<ThirdPersonCharacter>();
+            character = GetComponent<ThirdPersonCharacter>();   
 
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
@@ -31,11 +31,11 @@ namespace RPG.Characters
         {
             if (agent.remainingDistance > agent.stoppingDistance)
             {
-                character.Move(agent.desiredVelocity, false, false);
+                character.Move(agent.desiredVelocity);
             }
             else
             {
-                character.Move(Vector3.zero, false, false);
+                character.Move(Vector3.zero);
             }
         }
 
