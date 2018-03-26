@@ -22,13 +22,11 @@ namespace RPG.Characters
 
         bool isAttacking = false;
         float currentHealthPoints;
-        AICharacterControl aiCharacterControl = null;
         Player player = null;
 
         private void Start()
         {
             player = GameObject.FindObjectOfType<Player>();
-            aiCharacterControl = GetComponent<AICharacterControl>();
             currentHealthPoints = maxHealthPoints;
         }
 
@@ -50,11 +48,11 @@ namespace RPG.Characters
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= chaseRadius)
             {
-                aiCharacterControl.SetTarget(player.transform);
+                // aiCharacterControl.SetTarget(player.transform);
             }
             else
             {
-                aiCharacterControl.SetTarget(transform);
+                // aiCharacterControl.SetTarget(transform);
             }
 
             if (distanceToPlayer <= attackRadius && !isAttacking)
