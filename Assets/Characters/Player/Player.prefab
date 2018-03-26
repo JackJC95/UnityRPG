@@ -2115,7 +2115,7 @@ MonoBehaviour:
   movingTurnSpeed: 720
   stationaryTurnSpeed: 180
   moveThreshold: 1
-  stoppingDistance: 1
+  stoppingDistance: 1.3
   moveSpeedMultiplier: 1
   animationSpeedMultiplier: 1
 --- !u!114 &114484107431492116
@@ -2137,10 +2137,6 @@ MonoBehaviour:
   criticalHitChance: 0.1
   criticalHitMultiplier: 1.25
   criticalHitParticle: {fileID: 198859073338263194}
-  abilities:
-  - {fileID: 11400000, guid: 8120c7a4af880c64cb740cde407e3aab, type: 2}
-  - {fileID: 11400000, guid: 6d62ffb23c956394ca84fc4c653c4e54, type: 2}
-  - {fileID: 11400000, guid: 67c05e0f9bd736b4c853fccbe675baa8, type: 2}
 --- !u!114 &114645961474023502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2163,7 +2159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83210e122f42ea4191b766928aa483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyOrb: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 8120c7a4af880c64cb740cde407e3aab, type: 2}
+  - {fileID: 11400000, guid: 6d62ffb23c956394ca84fc4c653c4e54, type: 2}
+  - {fileID: 11400000, guid: 67c05e0f9bd736b4c853fccbe675baa8, type: 2}
+  energyBar: {fileID: 0}
   maxEnergyPoints: 100
   regenPointsPerSecond: 3
 --- !u!114 &114751639704101470
