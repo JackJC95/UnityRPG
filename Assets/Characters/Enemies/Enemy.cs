@@ -7,8 +7,8 @@ using RPG.Core;
 
 namespace RPG.Characters
 {
-    public class Enemy : MonoBehaviour, IDamageable // TODO remove interface
-    {
+    public class Enemy : MonoBehaviour
+    { 
         [SerializeField] float attackRadius = 8f;
         [SerializeField] float chaseRadius = 6f;
         [SerializeField] float damagePerShot = 9f;
