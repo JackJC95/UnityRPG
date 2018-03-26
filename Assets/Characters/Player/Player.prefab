@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5426510}
   - component: {fileID: 13615390}
   - component: {fileID: 195310769440319446}
-  - component: {fileID: 11469404}
   - component: {fileID: 114112113860311050}
   - component: {fileID: 114484107431492116}
   - component: {fileID: 114648829255492900}
@@ -71,19 +70,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11469404
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingTurnSpeed: 720
-  stationaryTurnSpeed: 180
 --- !u!136 &13615390
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2125,8 +2111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a4498019bb3e34d8a6d42286f8f320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingTurnSpeed: 720
+  stationaryTurnSpeed: 180
+  moveThreshold: 1
   stoppingDistance: 1
   moveSpeedMultiplier: 1
+  animationSpeedMultiplier: 1
 --- !u!114 &114484107431492116
 MonoBehaviour:
   m_ObjectHideFlags: 1
