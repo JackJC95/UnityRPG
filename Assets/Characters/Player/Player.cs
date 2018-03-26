@@ -10,7 +10,7 @@ using System;
 
 namespace RPG.Characters
 {
-    public class Player : MonoBehaviour, IDamageable
+    public class Player : MonoBehaviour
     {
         
         [SerializeField] float baseDamage = 10f;
@@ -22,7 +22,6 @@ namespace RPG.Characters
 
         // Temporarily serialized for dubbing
         [SerializeField] AbilityConfig[] abilities;
-
         
         const string ATTACK_TRIGGER = "Attack";
         
@@ -35,10 +34,7 @@ namespace RPG.Characters
 
         private void Start()
         {
-            audioSource = GetComponent<AudioSource>();
-
             RegisterForMouseClick();
-            SetCurrentMaxHealth();
             PutWeaponInHand(currentWeaponConfig);
             SetAttackAnimation();
             AttachInitialAbilities();          
@@ -54,7 +50,8 @@ namespace RPG.Characters
 
         private void Update()
         {
-            if (healthAsPercentage >= Mathf.Epsilon)
+            var healthPercentage = GetComponent<HealthSystem>().healthAsPercentage;
+            if (healthPercentage >= Mathf.Epsilon) // if alive
             {
                 ScanForAbilityKeyDown();
             }
@@ -69,11 +66,6 @@ namespace RPG.Characters
                     AttemptSpecialAbility(keyIndex);
                 }
             }
-        }
-
-        private void SetCurrentMaxHealth()
-        {
-            currentHealthPoints = maxHealthPoints;
         }
 
         private void SetAttackAnimation()
@@ -141,7 +133,6 @@ namespace RPG.Characters
             {
                 SetAttackAnimation();
                 animator.SetTrigger(ATTACK_TRIGGER);
-                currentEnemy.TakeDamage(CalculateDamage());
                 lastHitTime = Time.time;
             }
         }

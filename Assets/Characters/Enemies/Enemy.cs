@@ -7,7 +7,7 @@ using RPG.Core;
 
 namespace RPG.Characters
 {
-    public class Enemy : MonoBehaviour, IDamageable
+    public class Enemy : MonoBehaviour, IDamageable // TODO remove interface
     {
         [SerializeField] float attackRadius = 8f;
         [SerializeField] float chaseRadius = 6f;
@@ -25,16 +25,10 @@ namespace RPG.Characters
         private void Start()
         {
             player = GameObject.FindObjectOfType<Player>();
-            currentHealthPoints = maxHealthPoints;
         }
 
         private void Update()
         {
-            if(player.healthAsPercentage <= Mathf.Epsilon)
-            {
-                StopAllCoroutines();
-                Destroy(this); // to stop enemy behaviour
-            }
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= chaseRadius)
             {
@@ -81,6 +75,11 @@ namespace RPG.Characters
             // Draw chase sphere
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, chaseRadius);
+        }
+        
+        public void TakeDamage(float amount)
+        {
+            // TODO Remove
         }
     }
 }
