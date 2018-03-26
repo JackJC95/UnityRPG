@@ -9,7 +9,6 @@ namespace RPG.Characters
 {
     public class Enemy : MonoBehaviour, IDamageable
     {
-        [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] float attackRadius = 8f;
         [SerializeField] float chaseRadius = 6f;
         [SerializeField] float damagePerShot = 9f;
@@ -21,21 +20,12 @@ namespace RPG.Characters
         [SerializeField] GameObject projectileSocket;
 
         bool isAttacking = false;
-        float currentHealthPoints;
         Player player = null;
 
         private void Start()
         {
             player = GameObject.FindObjectOfType<Player>();
             currentHealthPoints = maxHealthPoints;
-        }
-
-        public float healthAsPercentage
-        {
-            get
-            {
-                return currentHealthPoints / maxHealthPoints;
-            }
         }
 
         private void Update()
@@ -80,15 +70,6 @@ namespace RPG.Characters
             Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized;
             float projectileSpeed = projectileComponent.GetDefaultLaunchSpeed();
             newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
-        }
-
-        public void TakeDamage(float damage)
-        {
-            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0, maxHealthPoints);
-            if (currentHealthPoints <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
 
         void OnDrawGizmos()
