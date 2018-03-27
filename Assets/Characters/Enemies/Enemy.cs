@@ -20,11 +20,11 @@ namespace RPG.Characters
         [SerializeField] GameObject projectileSocket;
 
         bool isAttacking = false;
-        Player player = null;
+        PlayerMovement player = null;
 
         private void Start()
         {
-            player = GameObject.FindObjectOfType<Player>();
+            player = GameObject.FindObjectOfType<PlayerMovement>();
         }
 
         private void Update()

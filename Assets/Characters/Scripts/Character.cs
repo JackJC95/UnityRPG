@@ -39,6 +39,7 @@ namespace RPG.Characters
 
         float turnAmount;
         float forwardAmount;
+        bool isAlive = true;
 
         void Awake()
         {
@@ -69,18 +70,11 @@ namespace RPG.Characters
             navMeshAgent.autoBraking = false;
             navMeshAgent.updateRotation = false;
             navMeshAgent.updatePosition = true;
-        }
-
-        void Start()
-        {
-            CameraRaycaster cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
-            cameraRaycaster.onMouseOverPotentiallyWalkable += OnMouseOverPotentiallyWalkable;
-            cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;
-        }                   
+        }               
 
         void Update()
         {
-            if (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
+            if (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance && isAlive)
             {
                 Move(navMeshAgent.desiredVelocity);
             }
@@ -90,17 +84,22 @@ namespace RPG.Characters
             }
         }
 
-        public void Move(Vector3 movement)
+        public void Kill()
+        {
+            isAlive = false;
+        }
+
+        public void SetDestination(Vector3 worldPosition)
+        {
+            navMeshAgent.destination = worldPosition;
+        }
+
+        void Move(Vector3 movement)
         {
             SetForwardAndTurn(movement);
             ApplyExtraTurnRotation();
             UpdateAnimator();
-        }
-
-        public void Kill()
-        {
-            // to allow death signalling
-        }
+        }    
 
         void SetForwardAndTurn(Vector3 movement)
         {
@@ -127,23 +126,6 @@ namespace RPG.Characters
             animator.SetFloat("Forward", forwardAmount, 0.1f, Time.deltaTime);
             animator.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
             animator.speed = animationSpeedMultiplier;
-        }
-
-        // TODO move to Player Control
-        void OnMouseOverPotentiallyWalkable(Vector3 destination)
-        {
-            if(Input.GetMouseButton(0))
-            {
-                navMeshAgent.SetDestination(destination);
-            }
-        }
-
-        void OnMouseOverEnemy(Enemy enemy)
-        {
-            if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(1))
-            {
-                navMeshAgent.SetDestination(enemy.transform.position);
-            }
         }
 
         void OnAnimatorMove()
