@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
   m_LocalRotation: {x: -0, y: -0.70459133, z: -0, w: 0.7096133}
-  m_LocalPosition: {x: 16.8, y: 0.45, z: -16.62}
+  m_LocalPosition: {x: 16.8, y: 0.16, z: -16.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479826943402412}
@@ -304,7 +304,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4479826943402412}
-  - component: {fileID: 95059602533142894}
   m_Layer: 0
   m_Name: Character_Knights_Soldier_01
   m_TagString: Untagged
@@ -1924,23 +1923,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803981190650124}
   m_Mesh: {fileID: 4300004, guid: d288a0e4a2d923b46898986e979da643, type: 3}
---- !u!95 &95059602533142894
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1272274589360340}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114112113860311050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1968,6 +1950,7 @@ MonoBehaviour:
   navMeshAgentSteeringSpeed: 1
   navMeshAgentAcceleration: 8
   navMeshAgentStoppingDistance: 1.3
+  navMeshAgentRadius: 0.3
 --- !u!114 &114484107431492116
 MonoBehaviour:
   m_ObjectHideFlags: 1
