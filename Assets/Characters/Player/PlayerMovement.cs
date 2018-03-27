@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using RPG.CameraUI; // for mouse events
 
-// TODO extract weapon system
 namespace RPG.Characters
 {
     public class PlayerMovement : MonoBehaviour
@@ -10,7 +9,7 @@ namespace RPG.Characters
         [SerializeField] float criticalHitMultiplier = 1.25f;
         [SerializeField] ParticleSystem criticalHitParticle = null;
         
-        Enemy currentEnemy = null;   
+        EnemyAI currentEnemy = null;   
         CameraRaycaster cameraRaycaster = null;        
         SpecialAbilities abilities;
         WeaponSystem weaponSystem;
@@ -48,7 +47,7 @@ namespace RPG.Characters
             }
         }
 
-        void OnMouseOverEnemy(Enemy enemy)
+        void OnMouseOverEnemy(EnemyAI enemy)
         {
             currentEnemy = enemy;
             if (Input.GetMouseButton(0) && IsTargetInRange(enemy.gameObject))

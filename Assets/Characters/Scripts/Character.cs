@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using RPG.CameraUI; // TODO consider rewiring
-using System;
 
 namespace RPG.Characters
 {

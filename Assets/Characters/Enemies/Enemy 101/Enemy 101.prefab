@@ -873,6 +873,7 @@ GameObject:
   - component: {fileID: 4866906662144838}
   - component: {fileID: 114320152223365844}
   - component: {fileID: 114645288143742518}
+  - component: {fileID: 114177886181353086}
   m_Layer: 0
   m_Name: Enemy 101
   m_TagString: Untagged
@@ -1893,6 +1894,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070b5c14a3ede3d43806e39fd3213c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114177886181353086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996939557571930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9cdd970cc4e1a4fbbd22aeeb4d47f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRadius: 6
 --- !u!114 &114320152223365844
 MonoBehaviour:
   m_ObjectHideFlags: 1
