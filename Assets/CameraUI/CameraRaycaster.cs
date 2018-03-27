@@ -27,7 +27,7 @@ namespace RPG.CameraUI
             // Check if pointer is over an interactable UI element
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                // Implement UI interaction
+                // Implement UI interaction                
             }
             else
             {

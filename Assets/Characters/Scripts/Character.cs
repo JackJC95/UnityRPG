@@ -1,15 +1,26 @@
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.CameraUI; // TODO consider rewiring
+using System;
 
 namespace RPG.Characters
 {
+    [SelectionBase]
     [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(CapsuleCollider))]
-    [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(NavMeshAgent))]
-    public class CharacterMovement : MonoBehaviour
+    public class Character : MonoBehaviour
     {
+        [Header("Animator Settings")]
+        [SerializeField] RuntimeAnimatorController animatorController;
+        [SerializeField] AnimatorOverrideController animatorOverrideController;
+        [SerializeField] Avatar characterAvatar;
+
+        [Header("Collider Settings")]
+        [SerializeField] Vector3 colliderCentre = new Vector3(0, 1, 0);
+        [SerializeField] float colliderRadius = 0.2f;
+        [SerializeField] float colliderHeight = 2f;
+
+        [Header("Movement Properties")]
         [SerializeField] float movingTurnSpeed = 360;
         [SerializeField] float stationaryTurnSpeed = 180;
         [SerializeField] float moveThreshold = 1f;
@@ -24,9 +35,26 @@ namespace RPG.Characters
         float turnAmount;
         float forwardAmount;
 
+        void Awake()
+        {
+            AddRequiredComponents();
+        }
+
+        void AddRequiredComponents()
+        {
+            animator = gameObject.AddComponent<Animator>();
+            animator.runtimeAnimatorController = animatorController;
+            animator.avatar = characterAvatar;
+
+            var capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
+            capsuleCollider.center = colliderCentre;
+            capsuleCollider.radius = colliderRadius;
+            capsuleCollider.height = colliderHeight;
+        }
+
         void Start()
         {
-            CameraRaycaster cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();  
+            CameraRaycaster cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
 
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
@@ -34,9 +62,7 @@ namespace RPG.Characters
             agent.stoppingDistance = stoppingDistance;
 
             cameraRaycaster.onMouseOverPotentiallyWalkable += OnMouseOverPotentiallyWalkable;
-            cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;
-
-            animator = GetComponent<Animator>();
+            cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;            
 
             myRigidbody = GetComponent<Rigidbody>();
             myRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
