@@ -4,26 +4,57 @@ using UnityEngine;
 
 namespace RPG.Characters
 {
+    [RequireComponent(typeof (Character))]
     [RequireComponent(typeof(WeaponSystem))]
     public class EnemyAI : MonoBehaviour
     {
         [SerializeField] float chaseRadius = 6f;
 
-        bool isAttacking = false; // TODO more rich state      
-        float currentWeaponRange;
+        enum State { idle, patrolling, chasing, attacking }
+        State state = State.idle;
 
+        float currentWeaponRange;
+        float distanceToPlayer;
         PlayerMovement player = null;
+        Character character;
 
         private void Start()
         {
-            player = GameObject.FindObjectOfType<PlayerMovement>();
+            player = FindObjectOfType<PlayerMovement>();
+            character = GetComponent<Character>();
         }
 
         private void Update()
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             WeaponSystem weaponSystem = GetComponent<WeaponSystem>();
             currentWeaponRange = weaponSystem.GetCurrentWeapon().GetMaxAttackRange();
+
+            if (distanceToPlayer > chaseRadius && state != State.patrolling)
+            {
+                StopAllCoroutines();
+                state = State.patrolling;
+            }
+            if (distanceToPlayer <= chaseRadius && state != State.chasing)
+            {
+                StopAllCoroutines();
+                StartCoroutine(ChasePlayer());
+            }
+            if (distanceToPlayer <= currentWeaponRange && state != State.attacking)
+            {
+                StopAllCoroutines();
+                state = State.attacking;
+            }
+        }
+
+        IEnumerator ChasePlayer()
+        {
+            state = State.chasing;
+            while (distanceToPlayer >= currentWeaponRange)
+            {
+                character.SetDestination(player.transform.position);
+                yield return new WaitForEndOfFrame();
+            }
         }
 
         void OnDrawGizmos()
