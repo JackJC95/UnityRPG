@@ -872,6 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4866906662144838}
   - component: {fileID: 114320152223365844}
+  - component: {fileID: 114645288143742518}
   m_Layer: 0
   m_Name: Enemy 101
   m_TagString: Untagged
@@ -1920,6 +1921,20 @@ MonoBehaviour:
   navMeshAgentAcceleration: 8
   navMeshAgentStoppingDistance: 1.3
   navMeshAgentRadius: 0.3
+--- !u!114 &114645288143742518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996939557571930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80a3bc61913a954ea845bd54c83f80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  currentWeaponConfig: {fileID: 11400000, guid: f2a2e46e443babf4b9471f7ad0492924,
+    type: 2}
 --- !u!137 &137180621270700266
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

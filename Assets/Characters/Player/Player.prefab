@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 114484107431492116}
   - component: {fileID: 114648829255492900}
   - component: {fileID: 114751639704101470}
+  - component: {fileID: 114615511654429096}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -1962,14 +1963,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5328c087403efad47b670df1a56a6d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  currentWeaponConfig: {fileID: 11400000, guid: 0320933cb9008884aa1813f3a683c75a,
-    type: 2}
-  animatorOverrideController: {fileID: 22100000, guid: 03238c9d99dabbb42917c408e7253f10,
-    type: 2}
   criticalHitChance: 0.1
   criticalHitMultiplier: 1.25
   criticalHitParticle: {fileID: 198859073338263194}
+--- !u!114 &114615511654429096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80a3bc61913a954ea845bd54c83f80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  currentWeaponConfig: {fileID: 11400000, guid: ca3726bf2aace5648b3d03c3d0220120,
+    type: 2}
 --- !u!114 &114645961474023502
 MonoBehaviour:
   m_ObjectHideFlags: 1

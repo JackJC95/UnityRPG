@@ -91,6 +91,8 @@ namespace RPG.Characters
             isAlive = false;
         }
 
+        public AnimatorOverrideController GetOverrideController() { return animatorOverrideController; }
+
         public void SetDestination(Vector3 worldPosition)
         {
             navMeshAgent.destination = worldPosition;
