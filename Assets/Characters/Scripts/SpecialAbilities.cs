@@ -46,7 +46,7 @@ namespace RPG.Characters
         {
             float energyCost = abilities[abilityIndex].GetEnergyCost();
 
-            if (energyCost <= currentEnergyPoints) // TODO read from SO
+            if (energyCost <= currentEnergyPoints)
             {
                 ConsumeEnergy(energyCost);
                 abilities[abilityIndex].Use(target);

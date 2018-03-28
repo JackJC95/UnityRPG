@@ -2020,8 +2020,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 100
   healthBar: {fileID: 0}
-  damageSounds: []
-  deathSounds: []
+  damageSounds:
+  - {fileID: 8300000, guid: bed166c2aedf8c34390fd43a2da55ab4, type: 3}
+  - {fileID: 8300000, guid: e45071cc9a5cac14486ee73bd70f45b8, type: 3}
+  - {fileID: 8300000, guid: 92b62599461978240a010f375230634d, type: 3}
+  - {fileID: 8300000, guid: 12c2ef2f2407669418b4b3b29d4b78ad, type: 3}
+  - {fileID: 8300000, guid: 13ee6e23e20fc1045ac408ee26fcc500, type: 3}
+  - {fileID: 8300000, guid: 381f532bbbd891a41af4464ff19ced28, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 8139f0b242a05004bb401eed053a1ce0, type: 3}
+  - {fileID: 8300000, guid: 84062eb36b09d9c45acc714d7fcedb8f, type: 3}
+  - {fileID: 8300000, guid: d22b382f605c81240b508c2f59b8c85d, type: 3}
   deathVanishSeconds: 2
 --- !u!137 &137644869271300766
 SkinnedMeshRenderer:

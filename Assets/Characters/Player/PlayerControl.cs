@@ -77,10 +77,10 @@ namespace RPG.Characters
         } 
 
         IEnumerator MoveToTarget(GameObject target)
-        {
-            character.SetDestination(target.transform.position);
+        {            
             while (!IsTargetInRange(target))
-            {                
+            {
+                character.SetDestination(target.transform.position);
                 yield return new WaitForEndOfFrame();
             }
             yield return new WaitForEndOfFrame();
