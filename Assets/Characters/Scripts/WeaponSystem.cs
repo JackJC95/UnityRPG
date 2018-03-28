@@ -146,5 +146,10 @@ namespace RPG.Characters
         {
             return baseDamage + currentWeaponConfig.GetAdditionalDamage();
         }
+
+        public Animator GetAnimator()
+        {
+            return animator;
+        }
     }
 }
