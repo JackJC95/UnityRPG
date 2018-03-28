@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 114177886181353086}
   - component: {fileID: 114155266127802740}
   m_Layer: 0
-  m_Name: Enemy 101
+  m_Name: Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1971,6 +1971,7 @@ MonoBehaviour:
   chaseRadius: 6
   patrolPath: {fileID: 0}
   waypointTolerance: 2
+  waypointDwellTime: 1
 --- !u!114 &114320152223365844
 MonoBehaviour:
   m_ObjectHideFlags: 1
