@@ -29,7 +29,27 @@ namespace RPG.Characters
 
         void Update()
         {
+            bool targetIsDead;
+            bool targetIsOutOfRange;
+            if (target == null)
+            {
+                targetIsDead = false;
+                targetIsOutOfRange = false;
+            }
+            else
+            {
+                float targetHealthPercentage = target.GetComponent<HealthSystem>().healthAsPercentage;
+                targetIsDead = targetHealthPercentage <= Mathf.Epsilon;
+                float targetRange = Vector3.Distance(target.transform.position, character.transform.position);
+                targetIsOutOfRange = targetRange > currentWeaponConfig.GetMaxAttackRange();
+            }
 
+            float characterHealth = GetComponent<HealthSystem>().healthAsPercentage;
+            bool characterIsDead = (characterHealth <= Mathf.Epsilon);
+            if (characterIsDead || targetIsOutOfRange || targetIsDead)
+            {
+                StopAllCoroutines();
+            }
         }
 
         public void PutWeaponInHand(WeaponConfig weaponToUse)
