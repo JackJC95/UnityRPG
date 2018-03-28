@@ -103,7 +103,6 @@ namespace RPG.Characters
         {
             yield return new WaitForSecondsRealtime(damageDelay);
             target.GetComponent<HealthSystem>().TakeDamage(CalculateDamage());
-            print(target.GetComponent<HealthSystem>().healthAsPercentage);
         }
 
         public WeaponConfig GetCurrentWeapon() { return currentWeaponConfig; }

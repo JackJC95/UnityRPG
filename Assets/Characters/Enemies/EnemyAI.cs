@@ -21,12 +21,12 @@ namespace RPG.Characters
         float distanceToPlayer;
         int nextWaypointIndex;
 
-        PlayerMovement player = null;
+        PlayerControl player = null;
         Character character;
 
         private void Start()
         {
-            player = FindObjectOfType<PlayerMovement>();
+            player = FindObjectOfType<PlayerControl>();
             character = GetComponent<Character>();
         }
 
@@ -57,7 +57,7 @@ namespace RPG.Characters
         {
             state = State.patrolling;
             
-            while (true)
+            while (patrolPath != null)
             {
                 Vector3 nextWaypointPosition = patrolPath.transform.GetChild(nextWaypointIndex).position;
                 character.SetDestination(nextWaypointPosition);

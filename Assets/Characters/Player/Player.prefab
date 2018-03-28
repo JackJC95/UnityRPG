@@ -1963,9 +1963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5328c087403efad47b670df1a56a6d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  criticalHitChance: 0.1
-  criticalHitMultiplier: 1.25
-  criticalHitParticle: {fileID: 198859073338263194}
 --- !u!114 &114615511654429096
 MonoBehaviour:
   m_ObjectHideFlags: 1
