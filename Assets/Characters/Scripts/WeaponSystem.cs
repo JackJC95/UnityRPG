@@ -1,5 +1,7 @@
 ﻿using UnityEngine.Assertions;
 using UnityEngine;
+using System.Collections;
+using System;
 
 namespace RPG.Characters
 {
@@ -14,9 +16,7 @@ namespace RPG.Characters
         Character character;
 
         const string ATTACK_TRIGGER = "Attack";
-        float lastHitTime;
-
-   
+        float lastHitTime;  
 
         void Start()
         {
@@ -46,8 +46,44 @@ namespace RPG.Characters
         public void AttackTarget(GameObject targetToAttack)
         {
             target = targetToAttack;
-            print("Attacking " + targetToAttack);
-            // TODO use repeat attack coroutine
+            StartCoroutine(AttackTargetRepeatedly());
+        }
+
+        IEnumerator AttackTargetRepeatedly()
+        {
+            bool attackerStillAlive = GetComponent<HealthSystem>().healthAsPercentage >= Mathf.Epsilon;
+            bool targetStillAlive = target.GetComponent<HealthSystem>().healthAsPercentage >= Mathf.Epsilon;
+
+            while (attackerStillAlive && targetStillAlive)
+            {
+                // know how often to attack
+                float weaponHitPeriod = currentWeaponConfig.GetMinTimeBetweenHits();
+                float timeToWait = weaponHitPeriod * character.GetAnimSpeedMultiplier();
+                bool isTimeToHitAgain = Time.time - lastHitTime > timeToWait;
+                
+                if (isTimeToHitAgain)
+                {
+                    AttackTargetOnce();
+                    lastHitTime = Time.time;
+                }
+                yield return new WaitForSeconds(timeToWait);
+            }            
+        }
+
+        void AttackTargetOnce()
+        {
+            transform.LookAt(target.transform);
+            animator.SetTrigger(ATTACK_TRIGGER);
+            float damageDelay = 1.0f; // TODO get from weapon itself
+            SetAttackAnimation();
+            StartCoroutine(DamageAfterDelay(damageDelay));
+        }
+
+        IEnumerator DamageAfterDelay(float damageDelay)
+        {
+            yield return new WaitForSecondsRealtime(damageDelay);
+            target.GetComponent<HealthSystem>().TakeDamage(CalculateDamage());
+            print(target.GetComponent<HealthSystem>().healthAsPercentage);
         }
 
         public WeaponConfig GetCurrentWeapon() { return currentWeaponConfig; }
@@ -63,10 +99,17 @@ namespace RPG.Characters
 
         private void SetAttackAnimation()
         {
-            animator = GetComponent<Animator>();
-            var animatorOverrideController = character.GetOverrideController();
-            animator.runtimeAnimatorController = animatorOverrideController;
-            animatorOverrideController["DEFAULT ATTACK"] = currentWeaponConfig.GetAttackAnimClip();
+            if (!character.GetOverrideController())
+            {
+                Debug.Break();
+                Debug.LogAssertion("Please proved " + gameObject + " with an animtator override controller");
+            }
+            else
+            {
+                var animatorOverrideController = character.GetOverrideController();
+                animator.runtimeAnimatorController = animatorOverrideController;
+                animatorOverrideController["DEFAULT ATTACK"] = currentWeaponConfig.GetAttackAnimClip();
+            }
         }        
 
         private void AttackTarget()
