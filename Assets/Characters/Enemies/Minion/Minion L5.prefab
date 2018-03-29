@@ -1212,7 +1212,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914958259072052}
   m_LocalRotation: {x: 0.0030633605, y: 0.64694273, z: 0.01015867, w: 0.76246476}
-  m_LocalPosition: {x: 2.992, y: 1.21, z: -11.638}
+  m_LocalPosition: {x: -0.93, y: 1.02, z: -15.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4487147041551760}
@@ -1953,10 +1953,9 @@ MonoBehaviour:
   maxHealthPoints: 48
   healthBar: {fileID: 114768195733198556}
   damageSounds:
-  - {fileID: 8300000, guid: bed166c2aedf8c34390fd43a2da55ab4, type: 3}
-  - {fileID: 8300000, guid: e45071cc9a5cac14486ee73bd70f45b8, type: 3}
+  - {fileID: 8300000, guid: f8431e5598f7615459b50930035046eb, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: 381f532bbbd891a41af4464ff19ced28, type: 3}
+  - {fileID: 8300000, guid: f8431e5598f7615459b50930035046eb, type: 3}
   deathVanishSeconds: 2
 --- !u!114 &114313569262308416
 MonoBehaviour:
