@@ -32,6 +32,7 @@ namespace RPG.Characters
         [SerializeField] float navMeshAgentAcceleration = 8.0f;
         [SerializeField] float navMeshAgentStoppingDistance = 1.3f;
         [SerializeField] float navMeshAgentRadius = 0.3f;
+        [SerializeField] float navMeshAgentHeight = 2.0f;
 
         NavMeshAgent navMeshAgent;
         Animator animator;
@@ -68,6 +69,7 @@ namespace RPG.Characters
             navMeshAgent.acceleration = navMeshAgentAcceleration;
             navMeshAgent.stoppingDistance = navMeshAgentStoppingDistance;
             navMeshAgent.radius = navMeshAgentRadius;
+            navMeshAgent.height = navMeshAgentHeight;
             navMeshAgent.autoBraking = false;
             navMeshAgent.updateRotation = false;
             navMeshAgent.updatePosition = true;
