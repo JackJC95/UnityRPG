@@ -37,21 +37,26 @@ namespace RPG.Characters
             WeaponSystem weaponSystem = GetComponent<WeaponSystem>();
             currentWeaponRange = weaponSystem.GetCurrentWeapon().GetMaxAttackRange();
 
-            if (distanceToPlayer > chaseRadius && state != State.patrolling)
+            bool inWeaponCircle = distanceToPlayer <= currentWeaponRange;
+            bool inChaseCircle = distanceToPlayer > currentWeaponRange && distanceToPlayer <= chaseRadius;
+            bool outsideChaseCircle = distanceToPlayer > chaseRadius;
+
+            if (outsideChaseCircle)
             {
                 StopAllCoroutines();
                 weaponSystem.StopAttacking();
                 StartCoroutine(Patrol());
             }
-            if (distanceToPlayer <= chaseRadius && state != State.chasing)
+            if (inChaseCircle)
             {
                 StopAllCoroutines();
                 weaponSystem.StopAttacking();
                 StartCoroutine(ChasePlayer());
             }
-            if (distanceToPlayer <= currentWeaponRange && state != State.attacking)
+            if (inWeaponCircle)
             {
                 StopAllCoroutines();
+                state = State.attacking;
                 weaponSystem.AttackTarget(player.gameObject);
             }
         }
@@ -90,7 +95,7 @@ namespace RPG.Characters
         void OnDrawGizmos()
         {
             // Draw attack spheres
-            Gizmos.color = new Color(255f, 0, 0, .5f);
+            Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, currentWeaponRange);
 
             // Draw chase sphere
