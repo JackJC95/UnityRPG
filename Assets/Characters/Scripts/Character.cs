@@ -10,6 +10,7 @@ namespace RPG.Characters
         [SerializeField] RuntimeAnimatorController animatorController;
         [SerializeField] AnimatorOverrideController animatorOverrideController;
         [SerializeField] Avatar characterAvatar;
+        [SerializeField] [Range (0.1f, 1.0f)] float animatorForwardCap = 1.0f;
 
         [Header("Audio")]
         [SerializeField] float audioSourceSpatialBlend = 0.5f;      
@@ -130,7 +131,7 @@ namespace RPG.Characters
 
         void UpdateAnimator()
         {
-            animator.SetFloat("Forward", forwardAmount, 0.1f, Time.deltaTime);
+            animator.SetFloat("Forward", forwardAmount * animatorForwardCap, 0.1f, Time.deltaTime);
             animator.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
             animator.speed = animationSpeedMultiplier;
         }
