@@ -35,7 +35,6 @@ sysinfo.txt
 *.unitypackage
 Assets/World Objects/Textures/Thatch/Thatch_Normal.png
 Assets/Sounds/Ambience/Ambience_Cave_00.wav
-Assets/Sounds/Ambience/tension_loop.wav
 Assets/Sounds/Ambience/lower_cavern_loop.wav
 Assets/Sounds/Ambience/frozen_lands_short_loop.wav
 Assets/Sounds/Ambience/encounter_loop.wav

@@ -1986,7 +1986,7 @@ MonoBehaviour:
   animationSpeedMultiplier: 1
   navMeshAgentSteeringSpeed: 1
   navMeshAgentAcceleration: 8
-  navMeshAgentStoppingDistance: 1.3
+  navMeshAgentStoppingDistance: 2.5
   navMeshAgentRadius: 0.3
   navMeshAgentHeight: 2
 --- !u!114 &114549543086560900

@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorController: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
-  animatorOverrideController: {fileID: 22100000, guid: a2d85949e7634284792e651c36d01baa,
+  animatorOverrideController: {fileID: 22100000, guid: fbf76516d5e04644f80717e8b3cada46,
     type: 2}
   characterAvatar: {fileID: 9000000, guid: c8e7b38172649374e8e61210fe7c3283, type: 3}
   animatorForwardCap: 0.332

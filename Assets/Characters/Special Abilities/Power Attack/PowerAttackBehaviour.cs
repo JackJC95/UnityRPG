@@ -9,6 +9,7 @@ namespace RPG.Characters
     {
         public override void Use(GameObject target)
         {
+            transform.LookAt(target.transform);
             PlayAbilitySound();
             DealPowerAttackDamage(target);
             PlayParticleEffect();
