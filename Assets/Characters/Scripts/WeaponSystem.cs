@@ -86,6 +86,7 @@ namespace RPG.Characters
                 var animationClip = currentWeaponConfig.GetAttackAnimClip();
                 float animationClipTime = animationClip.length / character.GetAnimSpeedMultiplier();
                 float timeToWait = animationClipTime + currentWeaponConfig.GetTimeBetweenAnimCycles();
+                // print(timeToWait);
                 bool isTimeToHitAgain = Time.time - lastHitTime > timeToWait;
                 
                 if (isTimeToHitAgain)
@@ -140,7 +141,7 @@ namespace RPG.Characters
 
         float CalculateDamage()
         {
-            return baseDamage + currentWeaponConfig.GetAdditionalDamage();
+            return baseDamage + currentWeaponConfig.GetAdditionalDamage();            
         }
 
         public Animator GetAnimator()

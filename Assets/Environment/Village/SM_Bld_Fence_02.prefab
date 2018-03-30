@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 416864}
   - component: {fileID: 3379268}
   - component: {fileID: 2390762}
+  - component: {fileID: 65443894073909704}
   m_Layer: 0
   m_Name: SM_Bld_Fence_02
   m_TagString: Untagged
@@ -23,13 +24,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130724}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.8573319, z: -0, w: 0.51476413}
+  m_LocalPosition: {x: 57.21, y: 0, z: -73.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 118.037, z: 0}
 --- !u!23 &2390762
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,3 +83,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130724}
   m_IsPrefabParent: 1
+--- !u!65 &65443894073909704
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6280044, y: 1.2452495, z: 0.19920231}
+  m_Center: {x: 0, y: 0.62262475, z: 0}

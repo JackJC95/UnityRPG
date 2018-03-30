@@ -952,15 +952,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464790338992680}
-  m_LocalRotation: {x: -0, y: -0.71221095, z: -0, w: -0.7019656}
-  m_LocalPosition: {x: 20.51, y: 0.98, z: -49.09}
+  m_LocalRotation: {x: -0, y: -0.7937675, z: -0, w: -0.60822135}
+  m_LocalPosition: {x: 9.925179, y: 3.9919434, z: -118.104225}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 4334333597792044}
   - {fileID: 224671437677536808}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -269.16998, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -254.922, z: 0}
 --- !u!4 &4074329092173032
 Transform:
   m_ObjectHideFlags: 1
@@ -1932,8 +1932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80a3bc61913a954ea845bd54c83f80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  currentWeaponConfig: {fileID: 11400000, guid: 407e4457cd745f544ac153f7cbacaeac,
+  baseDamage: 43.5
+  currentWeaponConfig: {fileID: 11400000, guid: a3bd6e84dc61b7e449cea3b365c66c44,
     type: 2}
 --- !u!114 &114227797481256390
 MonoBehaviour:
@@ -2077,12 +2077,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b547fc7ef1869284990bae17753b857c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 100
+  maxHealthPoints: 84
   healthBar: {fileID: 114801234196703026}
   damageSounds:
-  - {fileID: 8300000, guid: f8431e5598f7615459b50930035046eb, type: 3}
+  - {fileID: 8300000, guid: 44f9849d88c1b4b9a863b1c6ef105410, type: 3}
+  - {fileID: 8300000, guid: 3b70f198eff5d444daa55dab98d8cb2f, type: 3}
+  - {fileID: 8300000, guid: a6fc3e350eee24f2396f2204a5e0ba31, type: 3}
+  - {fileID: 8300000, guid: b76c2b9767eb040c18bcb6a3fb3260d1, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: f8431e5598f7615459b50930035046eb, type: 3}
+  - {fileID: 8300000, guid: 97fd58b2520ab4632bb0fd890ca00b2f, type: 3}
   deathVanishSeconds: 2
 --- !u!137 &137839147036751444
 SkinnedMeshRenderer:
