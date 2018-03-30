@@ -866,7 +866,6 @@ GameObject:
   - component: {fileID: 114532407004434012}
   - component: {fileID: 114046624860096786}
   - component: {fileID: 114647807917951872}
-  - component: {fileID: 114294643833492926}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -2008,7 +2007,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2032,7 +2031,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95178758555064716
 Animator:
   serializedVersion: 3
@@ -2070,21 +2069,6 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: 4ebef63f832f54fd0b648ffae65569a6, type: 3}
   deathVanishSeconds: 0.1
---- !u!114 &114294643833492926
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1914958259072052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0035449783309f49b5e52ed69eccacb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: e03c2de85149d47568da5c020f8f29a7, type: 3}
-  layerFilter: 0
-  playerDistanceThreshold: 8
-  isOneTimeOnly: 1
 --- !u!114 &114313569262308416
 MonoBehaviour:
   m_ObjectHideFlags: 1

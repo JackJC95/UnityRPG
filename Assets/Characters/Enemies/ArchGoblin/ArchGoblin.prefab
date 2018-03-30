@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 114600365927363780}
   - component: {fileID: 114677653737076150}
   - component: {fileID: 114461119387777812}
+  - component: {fileID: 114146590132208664}
   m_Layer: 0
   m_Name: ArchGoblin
   m_TagString: Untagged
@@ -1693,15 +1694,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960649248360500}
-  m_LocalRotation: {x: -0, y: 0.9714808, z: -0, w: 0.23711833}
-  m_LocalPosition: {x: -25.29181, y: 0.24000001, z: -100.77056}
+  m_LocalRotation: {x: -0, y: -0.9998892, z: -0, w: 0.014888106}
+  m_LocalPosition: {x: 55.9, y: 0, z: -47.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4103659572196224}
   - {fileID: 224037372294692234}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 152.567, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -178.294, z: 0}
 --- !u!4 &4993658856258456
 Transform:
   m_ObjectHideFlags: 1
@@ -1938,6 +1939,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114146590132208664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960649248360500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0035449783309f49b5e52ed69eccacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 4e9a429b5c00f4f2e8234fe5835fef69, type: 3}
+  layerFilter: 0
+  playerDistanceThreshold: 5
+  isOneTimeOnly: 1
 --- !u!114 &114369519878134798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1998,7 +2014,7 @@ MonoBehaviour:
   animatorForwardCap: 0.75
   audioSourceSpatialBlend: 0.5
   colliderCentre: {x: 0, y: 1, z: 0}
-  colliderRadius: 0.2
+  colliderRadius: 0.5
   colliderHeight: 2
   movingTurnSpeed: 360
   stationaryTurnSpeed: 180
@@ -2045,12 +2061,12 @@ MonoBehaviour:
   maxHealthPoints: 120
   healthBar: {fileID: 114369519878134798}
   damageSounds:
-  - {fileID: 8300000, guid: f2805cf8feb6543ebb46819e457a3b62, type: 3}
-  - {fileID: 8300000, guid: e6a5b3076b9a54fd6a81865309cf176a, type: 3}
-  - {fileID: 8300000, guid: 2de1a3a2dd2854605a93fca415642dad, type: 3}
+  - {fileID: 8300000, guid: 07c38e0499aea4acd81b44991c0e4d07, type: 3}
+  - {fileID: 8300000, guid: ebcbb664018f947728cb9b67468b0f48, type: 3}
+  - {fileID: 8300000, guid: f3645d7388d9f4efc88a56c59b3a70d4, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: 4ebef63f832f54fd0b648ffae65569a6, type: 3}
-  deathVanishSeconds: 2
+  - {fileID: 8300000, guid: 358d4521e408792428a8f78e4e0c7204, type: 3}
+  deathVanishSeconds: 1
 --- !u!114 &114720679569628436
 MonoBehaviour:
   m_ObjectHideFlags: 1
