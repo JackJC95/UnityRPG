@@ -62,6 +62,7 @@ namespace RPG.Characters
         {
             if (Input.GetMouseButton(0) && IsTargetInRange(enemy.gameObject))
             {
+                character.SetDestination(transform.position); // to overwrite move command with attack
                 weaponSystem.AttackTarget(enemy.gameObject);
             }
             else if (Input.GetMouseButton(0) && !IsTargetInRange(enemy.gameObject))
@@ -91,6 +92,7 @@ namespace RPG.Characters
         IEnumerator MoveAndAttack(EnemyAI enemy)
         {
             yield return StartCoroutine(MoveToTarget(enemy.gameObject));
+            character.SetDestination(transform.position); // so that player does not continue to move to destination once attack begins (e.g. ranged)
             weaponSystem.AttackTarget(enemy.gameObject);
         }
 
