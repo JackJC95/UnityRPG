@@ -39,7 +39,7 @@ namespace RPG.Characters
 
             bool inWeaponCircle = distanceToPlayer <= currentWeaponRange;
             bool inChaseCircle = distanceToPlayer > currentWeaponRange && distanceToPlayer <= chaseRadius;
-            bool outsideChaseCircle = distanceToPlayer > chaseRadius;
+            bool outsideChaseCircle = distanceToPlayer > chaseRadius && distanceToPlayer > currentWeaponRange;
 
             if (outsideChaseCircle)
             {

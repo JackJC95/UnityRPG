@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80a3bc61913a954ea845bd54c83f80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 43.5
+  baseDamage: 16.5
   currentWeaponConfig: {fileID: 11400000, guid: a3bd6e84dc61b7e449cea3b365c66c44,
     type: 2}
 --- !u!114 &114227797481256390
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9cdd970cc4e1a4fbbd22aeeb4d47f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRadius: 6
+  chaseRadius: 2
   patrolPath: {fileID: 0}
   waypointTolerance: 2
   waypointDwellTime: 1

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 114352926580925630}
   - component: {fileID: 114070344706291252}
   - component: {fileID: 114555429044652742}
+  - component: {fileID: 114637307908719896}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -1538,15 +1539,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206597546081146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.13, y: 3.93, z: -117.21}
+  m_LocalRotation: {x: -0, y: 0.9341781, z: -0, w: 0.3568071}
+  m_LocalPosition: {x: -101.05, y: 0.98, z: 117.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4449256753058446}
   - {fileID: 224002145302855176}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 138.19101, z: 0}
 --- !u!4 &4717984240690018
 Transform:
   m_ObjectHideFlags: 1
@@ -1949,7 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b547fc7ef1869284990bae17753b857c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 400
+  maxHealthPoints: 500
   healthBar: {fileID: 114409151054712324}
   damageSounds:
   - {fileID: 8300000, guid: a6fc3e350eee24f2396f2204a5e0ba31, type: 3}
@@ -2077,9 +2078,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80a3bc61913a954ea845bd54c83f80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 84
+  baseDamage: 50
   currentWeaponConfig: {fileID: 11400000, guid: 9138240d8def6f54098fc1e08bffc19c,
     type: 2}
+--- !u!114 &114637307908719896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206597546081146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0035449783309f49b5e52ed69eccacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 37e66fbc473444ab4bcc4a45d358561c, type: 3}
+  layerFilter: 0
+  playerDistanceThreshold: 5
+  isOneTimeOnly: 1
 --- !u!114 &114806783835482038
 MonoBehaviour:
   m_ObjectHideFlags: 1
