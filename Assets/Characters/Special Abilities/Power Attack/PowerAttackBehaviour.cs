@@ -10,10 +10,16 @@ namespace RPG.Characters
         public override void Use(GameObject target)
         {
             transform.LookAt(target.transform);
-            PlayAbilitySound();
-            DealPowerAttackDamage(target);
-            PlayParticleEffect();
             PlayAbilityAnimation();
+            PlayParticleEffect();
+            StartCoroutine(ExecuteAfterSeconds(target));                       
+        }
+
+        IEnumerator ExecuteAfterSeconds(GameObject target)
+        {
+            yield return new WaitForSeconds((config as PowerAttackConfig).GetEffectDelay());
+            DealPowerAttackDamage(target);
+            PlayAbilitySound();
         }
 
         private void DealPowerAttackDamage(GameObject target)

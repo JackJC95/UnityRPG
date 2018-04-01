@@ -1977,7 +1977,7 @@ MonoBehaviour:
   energyBar: {fileID: 0}
   maxEnergyPoints: 100
   regenPointsPerSecond: 3
-  outOfEnergy: {fileID: 8300000, guid: 14ffa98f81b2a3c4eae3356782558ec8, type: 3}
+  outOfEnergy: {fileID: 8300000, guid: ca056d4afe5e74498a0798f16e0e866d, type: 3}
 --- !u!114 &114751639704101470
 MonoBehaviour:
   m_ObjectHideFlags: 1
