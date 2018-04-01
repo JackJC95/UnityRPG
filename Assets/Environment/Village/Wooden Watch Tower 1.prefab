@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4299091440119382}
   - component: {fileID: 65875042441268146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wooden Watch Tower 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4283663820795938}
   - component: {fileID: 33212641771989858}
   - component: {fileID: 23447564718197186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Watch Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,14 +63,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040321284760140}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 42}
+  m_LocalRotation: {x: -0, y: -0.40762228, z: -0, w: -0.91315067}
+  m_LocalPosition: {x: -82.21, y: 0, z: 101.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4283663820795938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -311.889, z: 0}
 --- !u!23 &23447564718197186
 MeshRenderer:
   m_ObjectHideFlags: 1

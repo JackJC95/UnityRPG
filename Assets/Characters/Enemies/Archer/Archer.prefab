@@ -2082,10 +2082,10 @@ MonoBehaviour:
   damageSounds:
   - {fileID: 8300000, guid: 44f9849d88c1b4b9a863b1c6ef105410, type: 3}
   - {fileID: 8300000, guid: 3b70f198eff5d444daa55dab98d8cb2f, type: 3}
-  - {fileID: 8300000, guid: a6fc3e350eee24f2396f2204a5e0ba31, type: 3}
-  - {fileID: 8300000, guid: b76c2b9767eb040c18bcb6a3fb3260d1, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: 97fd58b2520ab4632bb0fd890ca00b2f, type: 3}
+  - {fileID: 8300000, guid: a6fc3e350eee24f2396f2204a5e0ba31, type: 3}
+  - {fileID: 8300000, guid: b76c2b9767eb040c18bcb6a3fb3260d1, type: 3}
   deathVanishSeconds: 2
 --- !u!137 &137839147036751444
 SkinnedMeshRenderer:
