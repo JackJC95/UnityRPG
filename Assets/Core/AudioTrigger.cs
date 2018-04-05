@@ -29,14 +29,6 @@ public class AudioTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == layerFilter)
-        {
-            RequestPlayAudioClip();
-        }
-    }
-
     void RequestPlayAudioClip()
     {
         if (isOneTimeOnly && hasPlayed)

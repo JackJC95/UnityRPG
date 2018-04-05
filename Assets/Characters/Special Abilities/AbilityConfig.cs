@@ -21,7 +21,7 @@ namespace RPG.Characters
         {
             AbilityBehaviour behaviourComponent = GetBehaviourComponent(objectToAttachTo);
             behaviourComponent.SetConfig(this);
-            behaviour = behaviourComponent;
+            behaviour = behaviourComponent;            
         }
 
         public void Use(GameObject target)

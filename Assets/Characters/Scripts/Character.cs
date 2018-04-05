@@ -24,7 +24,7 @@ namespace RPG.Characters
         [SerializeField] float movingTurnSpeed = 360;
         [SerializeField] float stationaryTurnSpeed = 180;
         [SerializeField] float moveThreshold = 1f;
-        [SerializeField] float moveSpeedMultiplier = 1f;
+        [SerializeField] float moveSpeedMultiplier = 1f; 
         [SerializeField] float animationSpeedMultiplier = 1f;
 
         [Header("NavMeshAgent")]

@@ -67,9 +67,10 @@ namespace RPG.Characters
         {
             characterMovement.Kill();
             animator.SetTrigger(DEATH_TRIGGER);
+            characterMovement.GetComponent<Collider>().enabled = false;
 
             audioSource.clip = deathSounds[UnityEngine.Random.Range(0, deathSounds.Length)];
-            audioSource.Play(); // override any exisiting sounds
+            audioSource.Play(); // override any existing sounds
             yield return new WaitForSecondsRealtime(audioSource.clip.length);
 
             var playerComponent = GetComponent<PlayerControl>();
