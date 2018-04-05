@@ -67,7 +67,7 @@ namespace RPG.Characters
         {
             characterMovement.Kill();
             animator.SetTrigger(DEATH_TRIGGER);
-            characterMovement.GetComponent<Collider>().enabled = false;
+            characterMovement.GetComponent<Collider>().enabled = false; // TODO turn off enemy audio triggers
 
             audioSource.clip = deathSounds[UnityEngine.Random.Range(0, deathSounds.Length)];
             audioSource.Play(); // override any existing sounds

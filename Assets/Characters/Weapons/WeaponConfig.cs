@@ -8,6 +8,7 @@ namespace RPG.Characters
     public class WeaponConfig : ScriptableObject
     {
         public Transform gripTransform;
+        public Transform projectileSpawnPoint;
 
         [SerializeField] GameObject weaponPrefab;
         [SerializeField] AnimationClip attackAnimation;
@@ -15,6 +16,7 @@ namespace RPG.Characters
         [SerializeField] float maxAttackRange = 2f;
         [SerializeField] float additionalDamage = 10f;
         [SerializeField] float damageDelay = 0.5f;
+        [SerializeField] ProjectileConfig projectileConfig;
 
         public float GetTimeBetweenAnimCycles()
         {
@@ -45,6 +47,16 @@ namespace RPG.Characters
         public float GetAdditionalDamage()
         {
             return additionalDamage;
+        }
+
+        public ProjectileConfig GetProjectileConfig()
+        {
+            return projectileConfig;
+        }
+
+        public Transform GetProjectileSpawnPoint()
+        {
+            return projectileSpawnPoint;
         }
 
         // So that asset packs cannot cause crashes

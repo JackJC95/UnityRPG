@@ -13,10 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gripTransform: {fileID: 4188723065759518, guid: 323ae82f3c343e2479890e06e9a41b4e,
     type: 2}
+  projectileSpawnPoint: {fileID: 4669636869483556, guid: 107f2b768a9f8374fa31853f178dd11e,
+    type: 2}
   weaponPrefab: {fileID: 1563655986059756, guid: 7f105c0c272e6c146b4b41cdc53ea356,
     type: 2}
   attackAnimation: {fileID: 7400000, guid: 24d693751e9fd0b42ba8f9595d8b5f5e, type: 3}
   timeBetweenAnimationCycles: 0.5
-  maxAttackRange: 10
-  additionalDamage: 60
+  maxAttackRange: 12
+  additionalDamage: 0
   damageDelay: 0.5
+  projectileConfig: {fileID: 11400000, guid: 6098cd1ca6e3ace41a55099aa0788f2f, type: 2}

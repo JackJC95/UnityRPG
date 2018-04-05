@@ -14,6 +14,8 @@ namespace RPG.Characters
         GameObject weaponObject;
         Animator animator;
         Character character;
+        ProjectileConfig projectile;
+        Vector3 aimOffset = new Vector3(0, 0.2f, 0);
 
         const string ATTACK_TRIGGER = "Attack";
         float lastHitTime;  
@@ -22,6 +24,7 @@ namespace RPG.Characters
         {
             animator = GetComponent<Animator>();
             character = GetComponent<Character>();
+            projectile = currentWeaponConfig.GetProjectileConfig();
 
             PutWeaponInHand(currentWeaponConfig);
             SetAttackAnimation();        
@@ -102,8 +105,13 @@ namespace RPG.Characters
         {
             transform.LookAt(target.transform);
             animator.SetTrigger(ATTACK_TRIGGER);
-            float damageDelay = currentWeaponConfig.GetDamageDelay();
             SetAttackAnimation();
+            if (projectile)
+            {
+                projectile.FireProjectile(target.transform.position + aimOffset, transform.position + new Vector3(-1, 1, 0));
+                return;
+            }
+            float damageDelay = currentWeaponConfig.GetDamageDelay();            
             StartCoroutine(DamageAfterDelay(damageDelay));
         }
 
@@ -141,7 +149,7 @@ namespace RPG.Characters
 
         float CalculateDamage()
         {
-            return baseDamage + currentWeaponConfig.GetAdditionalDamage();            
+            return baseDamage + currentWeaponConfig.GetAdditionalDamage(); // TODO calculate using DPS            
         }
 
         public Animator GetAnimator()
